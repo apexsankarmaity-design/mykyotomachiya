@@ -1100,3 +1100,100 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // end here
 
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const cursor = document.querySelector(".custom-cursor");
+    const cursorDot = document.querySelector(".custom-cursor-dot");
+
+    if (!cursor || !cursorDot) return;
+
+    let mouseX = 0;
+    let mouseY = 0;
+
+    let cursorX = 0;
+    let cursorY = 0;
+
+
+    /* Mouse position */
+
+    document.addEventListener("mousemove", function (e) {
+
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+
+        cursorDot.style.left = mouseX + "px";
+        cursorDot.style.top = mouseY + "px";
+
+    });
+
+
+    /* Smooth outer cursor */
+
+    function animateCursor() {
+
+        cursorX += (mouseX - cursorX) * 0.15;
+        cursorY += (mouseY - cursorY) * 0.15;
+
+        cursor.style.left = cursorX + "px";
+        cursor.style.top = cursorY + "px";
+
+        requestAnimationFrame(animateCursor);
+    }
+
+    animateCursor();
+
+
+    /* =========================================
+       HOVER EFFECT
+    ========================================= */
+
+    const hoverElements = document.querySelectorAll(
+        "a, button, input, select, textarea, .machiya-room, .machiya-tab"
+    );
+
+    hoverElements.forEach(function (element) {
+
+        element.addEventListener("mouseenter", function () {
+
+            cursor.style.width = "58px";
+            cursor.style.height = "58px";
+
+            cursor.style.background = "rgba(255, 44, 32, .08)";
+            cursor.style.borderColor = "#FF2C20";
+
+        });
+
+
+        element.addEventListener("mouseleave", function () {
+
+            cursor.style.width = "38px";
+            cursor.style.height = "38px";
+
+            cursor.style.background = "transparent";
+
+        });
+
+    });
+
+
+    /* Hide cursor outside browser window */
+
+    document.addEventListener("mouseleave", function () {
+
+        cursor.style.opacity = "0";
+        cursorDot.style.opacity = "0";
+
+    });
+
+
+    document.addEventListener("mouseenter", function () {
+
+        cursor.style.opacity = "1";
+        cursorDot.style.opacity = "1";
+
+    });
+
+});
+
