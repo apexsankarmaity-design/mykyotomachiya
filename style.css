@@ -1,0 +1,5278 @@
+/* ============================================================
+   RESET
+============================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #111;
+    color: #fff;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+button {
+    font-family: inherit;
+}
+
+
+
+/* ============================================================
+   HERO
+============================================================ */
+
+.kyoto-hero {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 100vh;
+    min-height: 720px;
+
+    display: flex;
+
+    overflow: hidden;
+
+    background: #111;
+}
+
+
+
+/* ============================================================
+   LEFT 30%
+============================================================ */
+
+.hero-left {
+    width: 30%;
+    background: #111;
+    position: relative;
+}
+
+
+/* ============================================================
+   LOGO
+============================================================ */
+
+/* =========================================
+   LOGO AREA
+========================================= */
+
+/* =========================================
+   LOGO AREA
+========================================= */
+
+.kyoto-logo {
+    position: absolute;
+    top: 42px;
+    left: 45px;
+    right: 45px;
+
+    height: 70px;
+
+    z-index: 20;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.kyoto-logo > a {
+    display: block;
+    width: fit-content;
+    line-height: 0;
+}
+
+.kyoto-logo img {
+    width: 60px;
+    height: auto;
+    display: block;
+}
+
+
+/* =========================================
+   LANGUAGE SWITCHER
+========================================= */
+
+.language-switcher {
+    position: absolute;
+
+    right: 0;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* JP / EN */
+
+.lang-label {
+    font-family: Montserrat, Arial, sans-serif;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    color: #fff;
+
+    opacity: .45;
+
+    transition: opacity .3s ease;
+}
+
+.lang-label.active {
+    opacity: 1;
+}
+
+
+/* =========================================
+   BIGGER TOGGLE
+========================================= */
+
+.lang-toggle {
+    position: relative;
+
+    width: 52px;
+    height: 26px;
+
+    display: block;
+    flex-shrink: 0;
+}
+
+.lang-toggle input {
+    display: none;
+}
+
+
+/* Toggle background */
+
+.lang-slider {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(255,255,255,.12);
+
+    border: 1px solid rgba(255,255,255,.5);
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    transition: .3s ease;
+}
+
+
+/* Toggle circle */
+
+.lang-slider::before {
+    content: "";
+
+    position: absolute;
+
+    width: 20px;
+    height: 20px;
+
+    top: 2px;
+    left: 2px;
+
+    background: #fff;
+
+    border-radius: 50%;
+
+    transition: transform .3s ease;
+}
+
+
+/* English active */
+
+.lang-toggle input:checked + .lang-slider {
+    background: #FF2C20;
+    border-color: #FF2C20;
+}
+
+.lang-toggle input:checked + .lang-slider::before {
+    transform: translateX(26px);
+}
+/* ============================================================
+   CONTENT BOX
+
+   IMPORTANT:
+
+   width: 70vw means the box extends across the
+   slider image.
+
+   This is the part you asked for.
+============================================================ */
+
+.hero-content-box {
+    position: absolute;
+
+    top: 50%;
+    left: 45px;
+
+    transform: translateY(-50%);
+
+    /* SMALLER BOX */
+    width: 52vw;
+    max-width: 560px;
+
+    min-height: 330px;
+
+    padding: 45px 50px;
+
+    background: rgba(20, 20, 20, 0.96);
+
+    z-index: 50;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    box-shadow:
+        0 20px 55px rgba(0, 0, 0, 0.35);
+}
+
+/* ============================================================
+   SMALL TITLE
+============================================================ */
+
+.hero-small-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-bottom: 22px;
+
+    color: #FF2C20;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+
+.hero-small-title span {
+
+    width: 38px;
+
+    height: 1px;
+
+    background: #FF2C20;
+
+    display: block;
+}
+
+
+
+/* ============================================================
+   MAIN HEADING
+============================================================ */
+
+.hero-content-box h1 {
+    max-width: 620px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(42px, 4vw, 64px);
+
+    line-height: 1;
+
+    font-weight: 400;
+
+    color: #fff;
+
+    letter-spacing: -0.5px;
+}
+
+
+.hero-content-box h1 strong {
+
+    display: block;
+
+    color: #fff;
+
+    font-weight: 500;
+}
+
+
+
+/* ============================================================
+   SUBTITLE
+============================================================ */
+
+.hero-subtitle {
+
+    margin-top: 22px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 31px;
+
+    font-style: italic;
+
+    color: #FF2C20;
+
+    font-weight: 500;
+}
+
+
+
+/* ============================================================
+   DESCRIPTION
+============================================================ */
+
+.hero-description {
+    max-width: 560px;
+
+    margin-top: 16px;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    color: rgba(255, 255, 255, 0.70);
+}
+
+
+
+/* ============================================================
+   HERO BUTTON
+============================================================ */
+
+.hero-button {
+
+    width: fit-content;
+
+    /* margin-top: 30px; */
+
+    padding: 15px 24px;
+
+    border: 1px solid rgba(255,255,255,0.40);
+
+    color: #fff;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.8px;
+
+    transition: 0.35s ease;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.hero-button i {
+
+    color: #FF2C20;
+
+    transition: 0.35s ease;
+}
+
+
+.hero-button:hover {
+
+    background: #FF2C20;
+
+    border-color: #FF2C20;
+
+}
+
+
+.hero-button:hover i {
+
+    color: #fff;
+
+    transform: translateX(5px);
+}
+
+
+
+/* ============================================================
+   SLIDE NUMBER
+============================================================ */
+
+.slide-number {
+
+    position: absolute;
+
+    left: 40px;
+
+    bottom: 170px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: rgba(255,255,255,0.4);
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    z-index: 60;
+}
+
+
+.slide-number .current-slide {
+
+    color: #FF2C20;
+
+    font-weight: 600;
+}
+
+
+.slide-line {
+
+    width: 35px;
+
+    height: 1px;
+
+    background: rgba(255,255,255,0.35);
+
+    display: block;
+}
+
+
+
+/* ============================================================
+   RIGHT 70%
+============================================================ */
+
+/* =========================================================
+   HERO SLIDER
+========================================================= */
+
+.hero-right {
+    position: relative;
+    width: 70%;
+    height: 100%;
+    overflow: hidden;
+    background: #111;
+}
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease;
+
+    z-index: 1;
+}
+
+.hero-slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+}
+
+.hero-slide img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+
+    transform: scale(1.04);
+
+    transition:
+        transform 6s cubic-bezier(.22,1,.36,1);
+}
+
+.hero-slide.active img {
+    transform: scale(1);
+}
+
+
+/* =========================================================
+   SLIDE NAME
+========================================================= */
+
+.hero-slide-name {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%)
+        translateY(25px);
+
+    width: min(620px, 80%);
+
+    padding: 25px 40px 28px;
+
+    text-align: center;
+
+    /* background: rgba(0, 0, 0, .68); */
+
+    /* border: 1px solid rgba(255,255,255,.15);
+
+    backdrop-filter: blur(5px);
+
+    opacity: 0;
+
+    transition:
+        opacity .8s ease .25s,
+        transform 1s cubic-bezier(.22,1,.36,1); */
+
+    z-index: 10;
+
+    pointer-events: none;
+}
+
+
+/* ACTIVE TITLE */
+
+.hero-slide.active .hero-slide-name {
+    opacity: 1;
+
+    transform:
+        translate(-50%, -50%)
+        translateY(0);
+}
+
+
+/* NUMBER */
+
+.hero-slide-name span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-family: Montserrat, Arial, sans-serif;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 4px;
+
+    color: #FF2C20;
+}
+
+
+/* TITLE */
+
+.hero-slide-name h2 {
+    margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(28px, 3.2vw, 52px);
+
+    font-weight: 400;
+
+    line-height: 1.08;
+
+    letter-spacing: -1px;
+
+    color: #FF2C20;
+
+    text-shadow:
+        0 2px 15px rgba(0,0,0,.5);
+}
+
+
+/* RED LINE */
+
+.hero-slide-name::after {
+    content: "";
+
+    display: block;
+
+    width: 50px;
+    height: 1px;
+
+    margin: 16px auto 0;
+
+    background: #FF2C20;
+}
+
+
+/* =========================================================
+   IMAGE DARK OVERLAY
+========================================================= */
+
+.hero-slide::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.08),
+            rgba(0,0,0,.18)
+        );
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+/* ============================================================
+   HEADER
+============================================================ */
+
+.hero-header {
+
+    position: absolute;
+
+    top: 0;
+
+    right: 0;
+
+    width: 100%;
+
+    padding: 35px 45px;
+
+    z-index: 30;
+}
+
+
+.hero-property-name {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 25px;
+
+    opacity: 1;
+
+    transition:
+        opacity .35s ease,
+        transform .35s ease;
+}
+
+.property-title {
+    display: inline-block;
+
+    padding: 9px 15px;
+
+    background: rgba(0, 0, 0, .55);
+
+    border-left: 2px solid #FF2C20;
+
+    color: #FF2C20;
+
+    font-family: Montserrat, Arial, sans-serif;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    line-height: 1.3;
+
+    text-transform: uppercase;
+}
+
+.hero-property-name.changing {
+    opacity: 0;
+    transform: translateY(6px);
+}
+
+/* ============================================================
+   MAIN MENU
+============================================================ */
+
+.main-menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+}
+
+
+/* ============================================================
+   MENU LINKS
+============================================================ */
+
+.main-menu a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 13px;
+
+    font-size: 10px;
+    letter-spacing: 1.3px;
+    font-weight: 600;
+
+    color: #fff;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    position: relative;
+    white-space: nowrap;
+
+    transition: all 0.3s ease;
+}
+
+
+/* Remove old underline */
+
+.main-menu a::after {
+    display: none;
+}
+
+
+/* Hover */
+
+.main-menu a:hover {
+    color: #fff;
+
+    background: #FF2C20;
+
+    border-color: #FF2C20;
+
+    transform: translateY(-2px);
+}
+
+
+/* ============================================================
+   MENU BUTTON
+============================================================ */
+
+.menu-toggle {
+    width: 45px;
+    height: 45px;
+
+    margin-left: 8px;
+
+    border: 1px solid rgba(255,255,255,0.6);
+
+    background: #171717;
+
+    color: #fff;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all 0.3s ease;
+}
+
+
+.menu-toggle:hover {
+    background: #FF2C20;
+    border-color: #FF2C20;
+}
+/* ============================================================
+   SLIDER ARROWS
+============================================================ */
+
+.slider-controls {
+
+    position: absolute;
+
+    right: 45px;
+
+    bottom: 170px;
+
+    display: flex;
+
+    gap: 10px;
+
+    z-index: 30;
+}
+
+
+.slider-arrow {
+
+    width: 50px;
+
+    height: 50px;
+
+    border: 1px solid rgba(255,255,255,0.45);
+
+    background: rgba(0,0,0,0.15);
+
+    color: #fff;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+
+.slider-arrow:hover {
+
+    background: #FF2C20;
+
+    border-color: #FF2C20;
+}
+
+
+
+/* ============================================================
+   BOOKING BAR
+============================================================ */
+
+.stay-booking-bar {
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 100%;
+
+    min-height: 70px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.25fr
+        1.1fr
+        1px
+        1.1fr
+        1.25fr
+        1.45fr;
+
+    align-items: center;
+
+    background: rgba(15,15,15,0.96);
+
+    border-top: 1px solid rgba(255,255,255,0.15);
+
+    z-index: 100;
+
+    padding: 15px 35px;
+}
+
+
+
+/* ============================================================
+   BOOKING ITEM
+============================================================ */
+
+.booking-item {
+
+    padding: 0 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+.booking-label {
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: #FF2C20;
+
+    font-weight: 600;
+}
+
+
+.booking-item strong {
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 22px;
+
+    font-weight: 500;
+
+    color: #fff;
+}
+
+
+
+/* ============================================================
+   DIVIDER
+============================================================ */
+
+.booking-divider {
+
+    width: 1px;
+
+    height: 55px;
+
+    background: rgba(255,255,255,0.2);
+}
+
+
+
+/* ============================================================
+   BOOKING BUTTON
+============================================================ */
+
+.booking-button-wrapper {
+
+    display: flex;
+
+    justify-content: center;
+
+    padding-left: 25px;
+}
+
+
+.booking-button {
+
+    min-width: 210px;
+
+    padding: 19px 25px;
+
+    background: #FF2C20;
+
+    color: #fff;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+
+.booking-button i {
+
+    transition: 0.3s ease;
+}
+
+
+.booking-button:hover {
+
+    background: #fff;
+
+    color: #111;
+}
+
+
+.booking-button:hover i {
+
+    transform: translateX(5px);
+}
+
+
+
+/* ============================================================
+   INTRO SECTION
+============================================================ */
+
+.intro-section {
+
+    min-height: 500px;
+
+    background: #f5f1eb;
+
+    color: #171717;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 100px 30px;
+}
+
+
+.intro-inner {
+
+    max-width: 800px;
+}
+
+
+.section-label {
+
+    color: #FF2C20;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    font-weight: 600;
+}
+
+
+.intro-inner h2 {
+
+    margin-top: 20px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(42px, 5vw, 65px);
+
+    line-height: 1;
+
+    font-weight: 500;
+}
+
+
+.intro-inner h2 span {
+
+    color: #FF2C20;
+}
+
+
+.intro-inner p {
+
+    margin: 25px auto;
+
+    max-width: 650px;
+
+    font-size: 14px;
+
+    line-height: 1.9;
+
+    color: #666;
+}
+
+
+.intro-inner > a {
+
+    display: inline-flex;
+
+    gap: 12px;
+
+    align-items: center;
+
+    padding: 15px 24px;
+
+    border: 1px solid #222;
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+
+.intro-inner > a:hover {
+
+    background: #FF2C20;
+
+    border-color: #FF2C20;
+
+    color: #fff;
+}
+
+
+
+/* ============================================================
+   RESPONSIVE - TABLET
+============================================================ */
+
+@media (max-width: 1200px) {
+
+
+    .main-menu {
+
+        gap: 16px;
+
+    }
+
+
+    .main-menu a {
+
+        font-size: 8px;
+
+    }
+
+
+    .hero-content-box {
+
+        width: 70vw;
+
+        padding: 55px;
+
+    }
+
+
+    .hero-content-box h1 {
+
+        font-size: 58px;
+
+    }
+
+}
+
+
+
+/* ============================================================
+   RESPONSIVE - MOBILE
+============================================================ */
+
+@media (max-width: 768px) {
+
+
+    .kyoto-hero {
+
+        height: auto;
+
+        min-height: 900px;
+
+        display: block;
+
+    }
+
+
+    /* LEFT PANEL */
+
+    .hero-left {
+
+        width: 100%;
+
+        height: 100%;
+
+        min-height: 900px;
+
+        padding: 25px;
+
+        background: #111;
+
+    }
+
+
+    /* IMAGE */
+
+    .hero-right {
+
+        position: absolute;
+
+        top: 0;
+
+        left: 0;
+
+        width: 100%;
+
+        height: 100%;
+
+        z-index: 1;
+
+    }
+
+
+    /* DARKER MOBILE IMAGE */
+
+    .hero-overlay {
+
+        background:
+            rgba(0,0,0,0.45);
+
+    }
+
+
+    /* LOGO */
+
+    .kyoto-logo {
+
+        width: 150px;
+
+    }
+
+
+    /* CONTENT BOX */
+
+    .hero-content-box {
+
+        left: 25px;
+
+        right: 25px;
+
+        width: auto;
+
+        max-width: none;
+
+        min-height: auto;
+
+        padding: 40px 30px;
+
+        background: rgba(20,20,20,0.94);
+
+    }
+
+
+    .hero-content-box h1 {
+
+        font-size: 48px;
+
+    }
+
+
+    .hero-subtitle {
+
+        font-size: 25px;
+
+    }
+
+
+    .hero-description {
+
+        font-size: 13px;
+
+    }
+
+
+    /* MENU */
+
+    .hero-header {
+
+        padding: 25px;
+
+    }
+
+
+    .main-menu a {
+
+        display: none;
+
+    }
+
+
+    .menu-toggle {
+
+        display: flex;
+
+    }
+
+
+    /* SLIDER CONTROLS */
+
+    .slider-controls {
+
+        right: 25px;
+
+        bottom: 180px;
+
+    }
+
+
+    /* SLIDE NUMBER */
+
+    .slide-number {
+
+        left: 25px;
+
+        bottom: 180px;
+
+    }
+
+
+    /* BOOKING */
+
+    .stay-booking-bar {
+
+        position: absolute;
+
+        bottom: 0;
+
+        grid-template-columns: 1fr 1fr;
+
+        padding: 20px;
+
+        min-height: 160px;
+
+    }
+
+
+    .booking-divider {
+
+        display: none;
+
+    }
+
+
+    .booking-item {
+
+        padding: 7px 10px;
+
+    }
+
+
+    .booking-item strong {
+
+        font-size: 18px;
+
+    }
+
+
+    .booking-button-wrapper {
+
+        padding: 10px;
+
+    }
+
+
+    .booking-button {
+
+        min-width: 100%;
+
+    }
+
+}
+
+
+
+/* ============================================================
+   VERY SMALL MOBILE
+============================================================ */
+
+@media (max-width: 480px) {
+
+
+    .hero-content-box {
+
+        top: 48%;
+
+        padding: 35px 25px;
+
+    }
+
+
+    .hero-content-box h1 {
+
+        font-size: 40px;
+
+    }
+
+
+    .hero-subtitle {
+
+        font-size: 22px;
+
+    }
+
+
+    .hero-description {
+
+        display: none;
+
+    }
+
+
+    .stay-booking-bar {
+
+        grid-template-columns: 1fr;
+
+        min-height: 230px;
+
+    }
+
+
+    .booking-button-wrapper {
+
+        padding-top: 10px;
+
+    }
+
+
+    .slide-number {
+
+        bottom: 250px;
+
+    }
+
+
+    .slider-controls {
+
+        bottom: 250px;
+
+    }
+
+}
+
+/* =========================================
+   MACHIYA INTRO
+========================================= */
+
+/* =========================================
+   MACHiya INTRO — COMPACT VERSION
+========================================= */
+
+.machiya-intro {
+    position: relative;
+    background: #f6f3ed;
+    padding: 65px 5% 55px;
+    overflow: hidden;
+}
+
+.machiya-intro-container {
+    max-width: 1150px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 0.95fr;
+    gap: 50px;
+
+    align-items: center;
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.machiya-intro-image {
+    position: relative;
+    height: 390px;
+    overflow: visible;
+}
+
+.machiya-intro-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    filter: saturate(.9);
+
+    position: relative;
+    z-index: 1;
+}
+
+
+/* subtle image frame */
+
+.machiya-intro-image::after {
+    content: "";
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    left: 12px;
+    top: 12px;
+
+    border: 1px solid rgba(255, 44, 32, .45);
+
+    z-index: 0;
+}
+
+
+/* =========================================
+   IMAGE LABEL
+========================================= */
+
+.machiya-image-label {
+    position: absolute;
+
+    z-index: 3;
+
+    left: -18px;
+    bottom: 28px;
+
+    width: 90px;
+    height: 115px;
+
+    background: #151515;
+
+    color: #fff;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    box-shadow: 0 12px 28px rgba(0,0,0,.18);
+}
+
+.machiya-image-label span {
+    font-size: 7px;
+    letter-spacing: 2px;
+    color: #aaa;
+    margin-bottom: 6px;
+}
+
+.machiya-image-label strong {
+    font-family: "Noto Serif JP", serif;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1;
+    color: #fff;
+}
+
+.machiya-image-label small {
+    font-size: 7px;
+    letter-spacing: 2px;
+    margin-top: 7px;
+    color: #ff2c20;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.machiya-intro-content {
+    max-width: 500px;
+}
+
+.section-eyebrow {
+    display: inline-block;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 2.2px;
+
+    color: #ff2c20;
+
+    margin-bottom: 12px;
+}
+
+.machiya-intro-content h2 {
+    margin: 0;
+
+    font-family: "Noto Serif", Georgia, serif;
+
+    font-size: clamp(32px, 3.2vw, 48px);
+
+    line-height: 1.05;
+
+    font-weight: 400;
+
+    color: #171717;
+}
+
+.machiya-intro-content h2 em {
+    display: block;
+
+    font-style: italic;
+
+    color: #555;
+
+    font-weight: 400;
+}
+
+.section-line {
+    width: 40px;
+    height: 1px;
+
+    background: #ff2c20;
+
+    margin: 18px 0;
+}
+
+.intro-lead {
+    font-family: "Noto Serif", Georgia, serif;
+
+    font-size: 16px;
+
+    line-height: 1.55;
+
+    color: #333;
+
+    margin-bottom: 12px;
+}
+
+.machiya-intro-content p:not(.intro-lead) {
+    font-size: 12px;
+
+    line-height: 1.7;
+
+    color: #666;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.machiya-read-more {
+    display: inline-flex;
+
+    align-items: center;
+    gap: 12px;
+
+    color: #171717;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.6px;
+
+    text-decoration: none;
+
+    border-bottom: 1px solid #171717;
+
+    padding-bottom: 7px;
+
+    transition: .35s ease;
+}
+
+.machiya-read-more span {
+    font-size: 14px;
+
+    transition: transform .35s ease;
+}
+
+.machiya-read-more:hover {
+    color: #ff2c20;
+
+    border-color: #ff2c20;
+}
+
+.machiya-read-more:hover span {
+    transform: translate(4px,-4px);
+}
+
+
+/* =========================================
+   FEATURES
+========================================= */
+
+.machiya-features {
+    max-width: 1150px;
+
+    margin: 55px auto 0;
+
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(0,0,0,.12);
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+.machiya-feature {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+}
+
+.feature-icon {
+    flex-shrink: 0;
+
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255,44,32,.45);
+
+    color: #ff2c20;
+
+    font-size: 12px;
+}
+
+.machiya-feature h3 {
+    margin: 0 0 5px;
+
+    font-family: "Noto Serif", Georgia, serif;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    color: #222;
+}
+
+.machiya-feature p {
+    margin: 0;
+
+    font-size: 12px;
+
+    line-height: 1.55;
+
+    color: #777;
+
+    max-width: 230px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .machiya-intro {
+        padding: 60px 5%;
+    }
+
+    .machiya-intro-container {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .machiya-intro-image {
+        height: 400px;
+    }
+
+    .machiya-intro-content {
+        max-width: 650px;
+    }
+
+    .machiya-features {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .machiya-intro {
+        padding: 50px 20px;
+    }
+
+    .machiya-intro-image {
+        height: 320px;
+    }
+
+    .machiya-intro-image::after {
+        left: 8px;
+        top: 8px;
+    }
+
+    .machiya-image-label {
+        left: -8px;
+        bottom: 20px;
+
+        width: 78px;
+        height: 100px;
+    }
+
+    .machiya-image-label strong {
+        font-size: 24px;
+    }
+
+    .machiya-intro-content h2 {
+        font-size: 34px;
+    }
+
+    .intro-lead {
+        font-size: 15px;
+    }
+
+    .machiya-features {
+        margin-top: 45px;
+    }
+
+}
+/* =========================================================
+   OUR MACHIYA — PREMIUM PROPERTY SHOWCASE
+========================================================= */
+
+/* .machiya-properties {
+    position: relative;
+    width: 100%;
+    background: #f5f2ec;
+    padding: 40px 0 60px;
+    overflow: hidden;
+} */
+
+.machiya-properties-inner {
+    width: min(1380px, calc(100% - 80px));
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.machiya-section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 60px;
+    margin-bottom: 65px;
+}
+
+.machiya-heading-left {
+    max-width: 700px;
+}
+
+.machiya-eyebrow {
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #ff2c20;
+}
+
+.machiya-heading-left h2 {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(42px, 5vw, 72px);
+    font-weight: 400;
+    line-height: .98;
+    letter-spacing: -2px;
+    color: #171717;
+}
+
+.machiya-heading-left h2 em {
+    font-weight: 400;
+    color: #6e6a62;
+}
+
+.machiya-heading-right {
+    max-width: 380px;
+    padding-bottom: 5px;
+}
+
+.machiya-heading-right p {
+    margin: 0;
+    color: #68645d;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   PROPERTY TABS
+========================================================= */
+
+/* =========================================================
+   =========================================================
+   OUR MACHIYA — PREMIUM PROPERTY SHOWCASE
+   COMPLETE UPDATED CSS
+   =========================================================
+   ========================================================= */
+
+
+/* =========================================================
+   MAIN SECTION
+========================================================= */
+
+.machiya-properties {
+    position: relative;
+    width: 100%;
+
+    background: #f5f2ec;
+
+    padding: 40px 0 60px;
+
+    overflow: hidden;
+}
+
+
+.machiya-properties-inner {
+    width: min(1380px, calc(100% - 80px));
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.machiya-section-heading {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-end;
+
+    gap: 60px;
+
+    margin-bottom: 55px;
+}
+
+
+.machiya-heading-left {
+    max-width: 700px;
+}
+
+
+.machiya-eyebrow {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+
+    color: #ff2c20;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+
+.machiya-eyebrow::before {
+    content: "";
+
+    width: 30px;
+    height: 1px;
+
+    background: #ff2c20;
+}
+
+
+.machiya-heading-left h2 {
+    margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(32px, 3.2vw, 48px);
+
+    font-weight: 400;
+
+    line-height: .98;
+
+    letter-spacing: -2px;
+
+    color: #171717;
+}
+
+
+.machiya-heading-left h2 em {
+    font-weight: 400;
+
+    color: #6e6a62;
+}
+
+
+.machiya-heading-right {
+    max-width: 380px;
+
+    padding-bottom: 5px;
+}
+
+
+/* .machiya-heading-right p {
+    margin: 0;
+
+    color: #68645d;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+} */
+
+
+/* =========================================================
+   PROPERTY TABS
+   IMPORTANT:
+   Uses .machiya-tab because this is your actual HTML class
+========================================================= */
+
+/* =========================================================
+   PROPERTY TABS
+========================================================= */
+
+.machiya-property-tabs {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    padding: 0;
+    margin-bottom: 35px;
+
+    background: transparent;
+    border: none;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   OVAL TAB BUTTON
+========================================================= */
+
+.machiya-tab {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    min-height: 48px;
+    padding: 0 24px;
+
+    background: #1d1d1d;
+
+    border: 1px solid #3a3a3a;
+    border-radius: 50px;
+
+    color: #aaa;
+
+    cursor: pointer;
+    text-align: center;
+
+    overflow: hidden;
+    appearance: none;
+    -webkit-appearance: none;
+
+    font-family: inherit;
+
+    transition:
+        background .3s ease,
+        border-color .3s ease,
+        color .3s ease,
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+
+/* =========================================================
+   REMOVE OLD DECORATIONS
+========================================================= */
+
+.machiya-tab::before,
+.machiya-tab::after {
+    display: none;
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.machiya-tab span {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 24px;
+    height: 24px;
+
+    border: 1px solid #555;
+    border-radius: 50%;
+
+    color: #aaa;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 10px;
+    line-height: 1;
+
+    transition:
+        background .3s ease,
+        border-color .3s ease,
+        color .3s ease;
+}
+
+
+/* =========================================================
+   PROPERTY NAME
+========================================================= */
+
+.machiya-tab strong {
+    position: relative;
+    z-index: 2;
+
+    color: #c8c4bd;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+    line-height: 1;
+
+    white-space: nowrap;
+
+    transition: color .3s ease;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.machiya-tab:hover {
+    background: #292929;
+    border-color: #777;
+
+    color: #fff;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.18);
+}
+
+
+.machiya-tab:hover span {
+    border-color: #ff2c20;
+    color: #ff2c20;
+}
+
+
+.machiya-tab:hover strong {
+    color: #fff;
+}
+
+
+/* =========================================================
+   ACTIVE
+========================================================= */
+
+.machiya-tab.active {
+    background: #ff2c20;
+    border-color: #ff2c20;
+
+    color: #fff;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 22px rgba(255,44,32,.22);
+}
+
+
+.machiya-tab.active span {
+    background: #171717;
+    border-color: #171717;
+    color: #fff;
+}
+
+
+.machiya-tab.active strong {
+    color: #fff;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .machiya-property-tabs {
+        gap: 8px;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding-bottom: 5px;
+    }
+
+    .machiya-tab {
+        flex-shrink: 0;
+        min-height: 44px;
+        padding: 0 18px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .machiya-property-tabs {
+        justify-content: flex-start;
+    }
+
+    .machiya-tab {
+        min-height: 42px;
+        padding: 0 15px;
+        gap: 7px;
+    }
+
+    .machiya-tab span {
+        width: 21px;
+        height: 21px;
+        font-size: 9px;
+    }
+
+    .machiya-tab strong {
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+}
+
+/* =========================================================
+   SLIDER WRAPPER
+========================================================= */
+
+.machiya-slider-wrapper {
+
+    position: relative;
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   SLIDER VIEWPORT
+========================================================= */
+
+.machiya-slider-viewport {
+
+    width: 100%;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   SLIDER TRACK
+========================================================= */
+
+.machiya-slider-track {
+
+    display: flex;
+
+    width: 400%;
+
+    transition:
+        transform 1s cubic-bezier(.77,0,.175,1);
+
+    will-change: transform;
+}
+
+
+/* =========================================================
+   PROPERTY SLIDE
+========================================================= */
+
+.machiya-property-slide {
+
+    flex: 0 0 25%;
+
+    width: 25%;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   PROPERTY MAIN AREA
+========================================================= */
+
+.machiya-property-main {
+
+    display: grid;
+
+    grid-template-columns: 52% 48%;
+
+    height: 410px;
+
+    min-height: 410px;
+}
+
+
+/* =========================================================
+   PROPERTY IMAGE
+========================================================= */
+
+.machiya-property-image {
+
+    position: relative;
+
+    height: 410px;
+
+    min-height: 410px;
+
+    overflow: hidden;
+
+    background: #222;
+}
+
+
+.machiya-property-image::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.02),
+            rgba(0,0,0,.18)
+        );
+
+    pointer-events: none;
+
+    z-index: 2;
+}
+
+
+.machiya-property-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transform: scale(1.06);
+
+    transition:
+        transform 1.5s cubic-bezier(.22,1,.36,1);
+}
+
+
+.machiya-property-slide.active
+.machiya-property-image img {
+
+    transform: scale(1);
+}
+
+
+/* =========================================================
+   IMAGE NUMBER
+========================================================= */
+
+.machiya-image-number {
+
+    position: absolute;
+
+    z-index: 5;
+
+    left: 25px;
+
+    bottom: 22px;
+
+    padding: 9px 13px;
+
+    background: rgba(0,0,0,.68);
+
+    color: #fff;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   PROPERTY CONTENT
+========================================================= */
+
+.machiya-property-content {
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 30px 48px;
+
+    background: #171717;
+
+    color: #fff;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   LARGE BACKGROUND NUMBER
+========================================================= */
+
+.machiya-property-content::before {
+
+    content: "01";
+
+    position: absolute;
+
+    right: -15px;
+
+    top: -45px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 180px;
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    color: rgba(255,255,255,.035);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   PROPERTY LOCATION
+========================================================= */
+
+.machiya-property-location {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 9px;
+
+    color: #ff2c20;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2.8px;
+}
+
+
+.machiya-property-location::before {
+
+    content: "";
+
+    width: 22px;
+
+    height: 1px;
+
+    background: #ff2c20;
+}
+
+
+/* =========================================================
+   PROPERTY TITLE
+========================================================= */
+
+.machiya-property-content h3 {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin: 0 0 12px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(35px, 3vw, 48px);
+
+    font-weight: 400;
+
+    line-height: .98;
+
+    letter-spacing: -1.5px;
+
+    color: #fff;
+}
+
+
+.machiya-property-content h3 em {
+
+    display: inline-block;
+
+    color: #ffb0aa;
+
+    font-size: .72em;
+
+    font-style: italic;
+
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.machiya-property-description {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 500px;
+
+    margin: 0 0 18px;
+
+    color: #d1cec8;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   SPECIFICATIONS
+========================================================= */
+
+.machiya-specifications {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0,1fr));
+
+    max-width: 540px;
+
+    border-top: 1px solid rgba(255,255,255,.18);
+
+    border-left: 1px solid rgba(255,255,255,.18);
+}
+
+
+.machiya-spec {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    min-height: 43px;
+
+    padding: 7px 11px;
+
+    border-right: 1px solid rgba(255,255,255,.18);
+
+    border-bottom: 1px solid rgba(255,255,255,.18);
+}
+
+
+/* =========================================================
+   SPEC ICON
+========================================================= */
+
+.spec-icon {
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 21px;
+
+    height: 21px;
+
+    border: 1px solid #ff2c20;
+
+    color: #ff2c20;
+
+    font-size: 13px;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   SPEC TEXT
+========================================================= */
+
+.machiya-spec strong {
+
+    display: block;
+
+    color: #fff;
+
+    font-size: 14px;
+
+    line-height: 1.2;
+
+    font-weight: 600;
+}
+
+
+.machiya-spec small {
+
+    display: block;
+
+    margin-top: 3px;
+
+    color: #a9a49c;
+
+    font-size: 11px;
+
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   VIEW PROPERTY BUTTON
+========================================================= */
+
+.machiya-view-property {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    width: 215px;
+
+    min-height: 40px;
+
+    margin-top: 17px;
+
+    padding: 0 14px;
+
+    border: 1px solid rgba(255,255,255,.45);
+
+    color: #fff;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+
+    text-decoration: none;
+
+    transition:
+        background .3s ease,
+        border-color .3s ease,
+        color .3s ease;
+}
+
+
+.machiya-view-property span {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 25px;
+
+    height: 25px;
+
+    background: #ff2c20;
+
+    color: #fff;
+
+    font-size: 15px;
+
+    transition:
+        transform .3s ease,
+        background .3s ease;
+}
+
+
+.machiya-view-property:hover {
+
+    background: #ff2c20;
+
+    border-color: #ff2c20;
+
+    color: #fff;
+}
+
+
+.machiya-view-property:hover span {
+
+    background: #171717;
+
+    transform: translate(3px,-2px);
+}
+
+
+/* =========================================================
+   ROOMS AREA
+========================================================= */
+
+.machiya-rooms-area {
+
+    background: #fff;
+
+    border: 1px solid #ded9d0;
+
+    border-top: 0;
+
+    padding: 18px 25px 20px;
+}
+
+
+/* =========================================================
+   ROOM HEADER
+========================================================= */
+
+.machiya-rooms-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 14px;
+}
+
+
+.machiya-rooms-heading > div > span {
+
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #ff2c20;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+.machiya-rooms-heading h4 {
+
+    margin: 0;
+
+    color: #171717;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 28px;
+
+    font-weight: 400;
+}
+
+
+.machiya-rooms-heading p {
+
+    max-width: 320px;
+
+    margin: 0;
+
+    color: #77736c;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   ROOM GRID
+========================================================= */
+
+/* =========================================================
+   ROOMS GRID
+========================================================= */
+
+.machiya-rooms-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+
+/* =========================================================
+   ROOM
+========================================================= */
+
+.machiya-room {
+    position: relative;
+    min-width: 0;
+    cursor: pointer;
+    transition: all .5s cubic-bezier(.22,1,.36,1);
+}
+
+
+/* =========================================================
+   ROOM IMAGE
+========================================================= */
+
+.machiya-room-image {
+    position: relative;
+    height: 125px;
+    overflow: hidden;
+    background: #ddd;
+
+    transition:
+        height .55s cubic-bezier(.22,1,.36,1),
+        box-shadow .55s ease;
+}
+
+
+.machiya-room-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    display: block;
+
+    transition:
+        transform .8s cubic-bezier(.22,1,.36,1),
+        filter .5s ease;
+}
+
+
+/* =========================================================
+   HOVER IMAGE
+========================================================= */
+
+.machiya-room:hover {
+    z-index: 10;
+}
+
+
+.machiya-room:hover .machiya-room-image {
+    height: 190px;
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.25);
+}
+
+
+.machiya-room:hover .machiya-room-image img {
+    transform: scale(1.08);
+}
+
+
+/* =========================================================
+   DARK OVERLAY
+========================================================= */
+
+.machiya-room-image::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,.45),
+        transparent 55%
+    );
+
+    opacity: 0;
+
+    transition: opacity .4s ease;
+}
+
+
+.machiya-room:hover .machiya-room-image::after {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   ROOM NUMBER
+========================================================= */
+
+.machiya-room-image > span {
+    position: absolute;
+
+    top: 10px;
+    right: 10px;
+
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0,0,0,.7);
+
+    color: #fff;
+
+    font-size: 9px;
+    letter-spacing: 1px;
+
+    z-index: 2;
+
+    transition:
+        background .3s ease,
+        transform .3s ease;
+}
+
+
+.machiya-room:hover .machiya-room-image > span {
+    background: #FF2C20;
+    transform: scale(1.08);
+}
+
+
+/* =========================================================
+   ROOM INFO
+========================================================= */
+
+.machiya-room-info {
+    padding: 12px 2px 2px;
+
+    transition:
+        transform .4s ease;
+}
+
+
+.machiya-room:hover .machiya-room-info {
+    transform: translateY(3px);
+}
+
+
+.machiya-room-info small {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #a09a91;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1.7px;
+}
+
+
+.machiya-room-info h5 {
+    margin: 0;
+
+    color: #222;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* =========================================================
+   PROPERTY COUNTER
+========================================================= */
+
+.machiya-property-counter {
+
+    position: absolute;
+
+    z-index: 10;
+
+    right: 100px;
+
+    top: -49px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #77736c;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+
+.machiya-property-counter span:first-child {
+
+    color: #171717;
+
+    font-weight: 700;
+}
+
+
+.machiya-property-counter i {
+
+    width: 25px;
+
+    height: 1px;
+
+    display: block;
+
+    background: #bdb8af;
+}
+
+
+/* =========================================================
+   PROPERTY ARROWS
+========================================================= */
+
+.machiya-slider-arrow {
+
+    position: absolute;
+
+    z-index: 20;
+
+    top: -64px;
+
+    width: 43px;
+
+    height: 43px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #f5f2ec;
+
+    border: 1px solid #c8c2b8;
+
+    color: #1c1c1c;
+
+    cursor: pointer;
+
+    transition:
+        background .3s ease,
+        border-color .3s ease,
+        color .3s ease,
+        transform .3s ease;
+}
+
+
+.machiya-slider-arrow span {
+
+    font-size: 18px;
+}
+
+
+.machiya-prev {
+
+    right: 54px;
+}
+
+
+.machiya-next {
+
+    right: 0;
+}
+
+
+.machiya-slider-arrow:hover {
+
+    background: #ff2c20;
+
+    border-color: #ff2c20;
+
+    color: #fff;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .machiya-properties {
+
+        padding: 90px 0 100px;
+    }
+
+
+    .machiya-properties-inner {
+
+        width: min(100% - 45px, 1000px);
+    }
+
+
+    .machiya-property-main {
+
+        grid-template-columns: 50% 50%;
+    }
+
+
+    .machiya-property-content {
+
+        padding: 35px;
+    }
+
+
+    .machiya-property-content h3 {
+
+        font-size: 38px;
+    }
+
+
+    .machiya-property-description {
+
+        font-size: 12px;
+
+        margin-bottom: 18px;
+    }
+
+
+    .machiya-specifications {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .machiya-spec {
+
+        min-height: 45px;
+    }
+
+
+    .machiya-room-image {
+
+        height: 140px;
+    }
+
+
+    .machiya-tab {
+
+        padding: 0 16px;
+
+        gap: 12px;
+    }
+
+
+    .machiya-tab strong {
+
+        font-size: 10px;
+
+        letter-spacing: 1.5px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .machiya-properties {
+
+        padding: 70px 0 80px;
+    }
+
+
+    .machiya-properties-inner {
+
+        width: calc(100% - 30px);
+    }
+
+
+    /* SECTION HEADER */
+
+    .machiya-section-heading {
+
+        display: block;
+
+        margin-bottom: 40px;
+    }
+
+
+    .machiya-heading-left h2 {
+
+        font-size: 42px;
+    }
+
+
+    .machiya-heading-right {
+
+        margin-top: 22px;
+    }
+
+
+    /* TABS */
+
+    .machiya-property-tabs {
+
+        grid-template-columns: repeat(2,1fr);
+
+        gap: 8px;
+
+        padding: 8px;
+
+        margin-bottom: 25px;
+    }
+
+
+    .machiya-tab {
+
+        min-height: 68px;
+
+        padding: 0 14px;
+
+        gap: 10px;
+    }
+
+
+    .machiya-tab span {
+
+        width: 30px;
+
+        height: 30px;
+
+        font-size: 10px;
+    }
+
+
+    .machiya-tab strong {
+
+        font-size: 10px;
+
+        letter-spacing: 1.2px;
+    }
+
+
+    .machiya-tab::before {
+
+        font-size: 70px;
+    }
+
+
+    /* PROPERTY */
+
+    .machiya-property-main {
+
+        grid-template-columns: 1fr;
+
+        height: auto;
+
+        min-height: 0;
+    }
+
+
+    .machiya-property-image {
+
+        height: 350px;
+
+        min-height: 350px;
+    }
+
+
+    .machiya-property-content {
+
+        min-height: 400px;
+
+        padding: 35px 28px;
+    }
+
+
+    .machiya-property-content h3 {
+
+        font-size: 38px;
+    }
+
+
+    .machiya-property-description {
+
+        max-width: 100%;
+
+        font-size: 12px;
+    }
+
+
+    .machiya-specifications {
+
+        max-width: 100%;
+    }
+
+
+    /* ROOMS */
+
+    .machiya-rooms-area {
+
+        padding: 25px 20px;
+    }
+
+
+    .machiya-rooms-heading {
+
+        display: block;
+    }
+
+
+    .machiya-rooms-heading p {
+
+        margin-top: 10px;
+    }
+
+
+    .machiya-rooms-grid {
+
+        display: flex;
+
+        overflow-x: auto;
+
+        gap: 12px;
+
+        padding-bottom: 8px;
+
+        scrollbar-width: thin;
+    }
+
+
+    .machiya-room {
+
+        flex: 0 0 210px;
+    }
+
+
+    .machiya-room-image {
+
+        height: 145px;
+    }
+
+
+    /* COUNTER */
+
+    .machiya-property-counter {
+
+        display: none;
+    }
+
+
+    /* ARROWS */
+
+    .machiya-slider-arrow {
+
+        top: -58px;
+
+        width: 38px;
+
+        height: 38px;
+    }
+
+
+    .machiya-prev {
+
+        right: 45px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .machiya-properties {
+
+        padding: 60px 0 70px;
+    }
+
+
+    .machiya-properties-inner {
+
+        width: calc(100% - 24px);
+    }
+
+
+    .machiya-heading-left h2 {
+
+        font-size: 36px;
+    }
+
+
+    /* TABS */
+
+    .machiya-property-tabs {
+
+        grid-template-columns: 1fr;
+
+        gap: 6px;
+
+        padding: 7px;
+    }
+
+
+    .machiya-tab {
+
+        min-height: 62px;
+
+        padding: 0 14px;
+    }
+
+
+    .machiya-tab strong {
+
+        font-size: 10px;
+
+        letter-spacing: 1.5px;
+    }
+
+
+    /* IMAGE */
+
+    .machiya-property-image {
+
+        height: 250px;
+
+        min-height: 250px;
+    }
+
+
+    /* CONTENT */
+
+    .machiya-property-content {
+
+        min-height: auto;
+
+        padding: 35px 22px;
+    }
+
+
+    .machiya-property-content h3 {
+
+        font-size: 34px;
+    }
+
+
+    .machiya-property-description {
+
+        font-size: 12px;
+
+        line-height: 1.6;
+    }
+
+
+    /* SPECS */
+
+    .machiya-specifications {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    /* BUTTON */
+
+    .machiya-view-property {
+
+        width: 100%;
+
+        max-width: 215px;
+    }
+
+
+    /* ARROWS */
+
+    .machiya-slider-arrow {
+
+        top: 0;
+
+        background: #f5f2ec;
+    }
+
+}
+
+
+/* =========================================================
+   THINGS TO DO
+========================================================= */
+
+/* =========================================
+   KYOTO THINGS — COMPACT VERSION
+========================================= */
+
+.kyoto-things {
+    background: #171717;
+    padding: 65px 0;
+    color: #fff;
+}
+
+.kyoto-things-inner {
+    width: min(1150px, calc(100% - 50px));
+    margin: auto;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.kyoto-things-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
+    margin-bottom: 35px;
+}
+
+.kyoto-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-bottom: 12px;
+
+    color: #ff2c20;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.kyoto-eyebrow::before {
+    content: "";
+
+    width: 20px;
+    height: 1px;
+
+    background: #ff2c20;
+}
+
+.kyoto-things-header h2 {
+    margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(30px, 3.5vw, 46px);
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    letter-spacing: -1px;
+}
+
+.kyoto-things-header h2 em {
+    color: #a8a39b;
+    font-style: italic;
+}
+
+.kyoto-things-intro {
+    width: 270px;
+}
+
+.kyoto-things-intro p {
+    margin: 0 0 15px;
+
+    color: #aaa59e;
+
+    font-size: 12px;
+
+    line-height: 1.65;
+}
+
+.kyoto-text-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #fff;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-decoration: none;
+}
+
+.kyoto-text-link span {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 25px;
+    height: 25px;
+
+    border: 1px solid #555;
+
+    color: #ff2c20;
+
+    transition: .3s ease;
+}
+
+.kyoto-text-link:hover span {
+    background: #ff2c20;
+
+    border-color: #ff2c20;
+
+    color: #fff;
+}
+
+
+/* =========================================
+   GRID
+========================================= */
+
+.kyoto-things-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 10px;
+}
+
+
+/* =========================================
+   ITEM
+========================================= */
+
+.kyoto-thing {
+    color: inherit;
+
+    text-decoration: none;
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.kyoto-thing-image {
+    position: relative;
+
+    height: 235px;
+
+    overflow: hidden;
+
+    background: #222;
+}
+
+.kyoto-thing-image img {
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform .8s cubic-bezier(.22,1,.36,1);
+}
+
+.kyoto-thing:hover img {
+    transform: scale(1.06);
+}
+
+
+/* =========================================
+   IMAGE OVERLAY
+========================================= */
+
+.kyoto-thing-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.65),
+            transparent 55%
+        );
+}
+
+
+/* =========================================
+   NUMBER
+========================================= */
+
+.kyoto-thing-number {
+    position: absolute;
+
+    z-index: 3;
+
+    left: 11px;
+
+    top: 11px;
+
+    color: #fff;
+
+    font-family: Georgia, serif;
+
+    font-size: 10px;
+}
+
+
+/* =========================================
+   ARROW
+========================================= */
+
+.kyoto-thing-arrow {
+    position: absolute;
+
+    z-index: 3;
+
+    right: 10px;
+
+    bottom: 10px;
+
+    width: 28px;
+
+    height: 28px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255,255,255,.5);
+
+    color: #fff;
+
+    font-size: 11px;
+
+    transition: .35s ease;
+}
+
+.kyoto-thing:hover .kyoto-thing-arrow {
+    background: #ff2c20;
+
+    border-color: #ff2c20;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.kyoto-thing-content {
+    padding: 12px 2px 0;
+}
+
+.kyoto-thing-content > span {
+    color: #ff2c20;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+.kyoto-thing-content h3 {
+    margin: 6px 0 6px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 18px;
+
+    font-weight: 400;
+
+    line-height: 1.05;
+}
+
+.kyoto-thing-content h3 em {
+    color: #99948c;
+}
+
+.kyoto-thing-content p {
+    margin: 0;
+
+    color: #85817b;
+
+    font-size: 12px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .kyoto-things {
+        padding: 55px 0;
+    }
+
+    .kyoto-things-inner {
+        width: calc(100% - 40px);
+    }
+
+    .kyoto-things-header {
+        gap: 25px;
+
+        margin-bottom: 30px;
+    }
+
+    .kyoto-things-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 15px;
+    }
+
+    .kyoto-thing-image {
+        height: 240px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .kyoto-things {
+        padding: 45px 0;
+    }
+
+    .kyoto-things-inner {
+        width: calc(100% - 30px);
+    }
+
+    .kyoto-things-header {
+        display: block;
+
+        margin-bottom: 25px;
+    }
+
+    .kyoto-things-header h2 {
+        font-size: 32px;
+    }
+
+    .kyoto-things-intro {
+        width: 100%;
+
+        margin-top: 15px;
+    }
+
+    .kyoto-things-intro p {
+        font-size: 10px;
+    }
+
+    .kyoto-things-grid {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+    .kyoto-thing-image {
+        height: 260px;
+    }
+
+    .kyoto-thing-content h3 {
+        font-size: 20px;
+    }
+
+}
+/* =========================================================
+   LATEST POSTS
+========================================================= */
+
+/* =========================================
+   LATEST POSTS — COMPACT VERSION
+========================================= */
+
+.latest-posts {
+    background: #f5f2ec;
+    padding: 65px 0;
+}
+
+.latest-posts-inner {
+    width: min(1150px, calc(100% - 50px));
+    margin: auto;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.latest-posts-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    margin-bottom: 32px;
+}
+
+.latest-posts-heading h2 {
+    margin: 0;
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(30px, 3.5vw, 46px);
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    letter-spacing: -1px;
+        color: #171717;
+}
+
+.latest-posts-heading h2 em {
+    color: #77736c;
+    font-style: italic;
+}
+
+
+/* =========================================
+   VIEW ALL
+========================================= */
+
+.latest-view-all {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    color: #171717;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-decoration: none;
+}
+
+.latest-view-all span {
+    width: 27px;
+    height: 27px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #bbb5ab;
+
+    font-size: 11px;
+
+    transition: .3s ease;
+}
+
+.latest-view-all:hover span {
+    background: #ff2c20;
+
+    border-color: #ff2c20;
+
+    color: #fff;
+}
+
+
+/* =========================================
+   GRID
+========================================= */
+
+.latest-posts-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.latest-post-image {
+    position: relative;
+
+    display: block;
+
+    height: 210px;
+
+    overflow: hidden;
+}
+
+.latest-post-image img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform .8s ease;
+}
+
+.latest-post:hover .latest-post-image img {
+    transform: scale(1.05);
+}
+
+.latest-post-image > span {
+    position: absolute;
+
+    left: 12px;
+    top: 12px;
+
+    color: #fff;
+
+    font-family: Georgia, serif;
+
+    font-size: 10px;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.latest-post-content {
+    padding-top: 13px;
+}
+
+.latest-post-meta {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: #a09a91;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+}
+
+.latest-post-meta i {
+    width: 14px;
+
+    height: 1px;
+
+    background: #ff2c20;
+}
+
+.latest-post-content h3 {
+    max-width: 360px;
+
+    margin: 9px 0 12px;
+
+    color: #171717;
+
+    font-family: Georgia, serif;
+
+    font-size: 19px;
+
+    font-weight: 400;
+
+    line-height: 1.15;
+}
+
+.latest-post-content > a {
+    color: #171717;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-decoration: none;
+}
+
+.latest-post-content > a span {
+    margin-left: 7px;
+
+    color: #ff2c20;
+
+    transition: .3s ease;
+}
+
+.latest-post:hover .latest-post-content > a span {
+    margin-left: 12px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .latest-posts {
+        padding: 55px 0;
+    }
+
+    .latest-posts-inner {
+        width: calc(100% - 40px);
+    }
+
+    .latest-posts-grid {
+        gap: 15px;
+    }
+
+    .latest-post-image {
+        height: 200px;
+    }
+
+    .latest-post-content h3 {
+        font-size: 18px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .latest-posts {
+        padding: 45px 0;
+    }
+
+    .latest-posts-inner {
+        width: calc(100% - 30px);
+    }
+
+    .latest-posts-heading {
+        margin-bottom: 25px;
+    }
+
+    .latest-posts-heading h2 {
+        font-size: 32px;
+    }
+
+    .latest-posts-grid {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    .latest-post-image {
+        height: 240px;
+    }
+
+    .latest-post-content h3 {
+        font-size: 21px;
+    }
+
+}
+
+/* =========================================================
+   REVIEWS
+========================================================= */
+
+/* =========================================
+   KYOTO REVIEWS — COMPACT VERSION
+========================================= */
+
+.kyoto-reviews {
+    background: #171717;
+
+    color: #fff;
+
+    padding: 65px 0 60px;
+}
+
+.kyoto-reviews-inner {
+    width: min(900px, calc(100% - 50px));
+
+    margin: auto;
+}
+
+
+/* =========================================
+   TOP
+========================================= */
+
+.kyoto-reviews-top {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 35px;
+}
+
+.kyoto-reviews-top .kyoto-eyebrow {
+    margin: 0;
+}
+
+.reviews-count {
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 5px;
+
+    font-family: Georgia, serif;
+}
+
+.reviews-count strong {
+    color: #fff;
+
+    font-size: 13px;
+
+    font-weight: 400;
+}
+
+.reviews-count span {
+    color: #777;
+
+    font-size: 9px;
+}
+
+
+/* =========================================
+   SLIDER
+========================================= */
+
+.reviews-slider {
+    position: relative;
+
+    min-height: 235px;
+}
+
+
+/* =========================================
+   SLIDE
+========================================= */
+
+.review-slide {
+    display: none;
+
+    text-align: center;
+}
+
+.review-slide.active {
+    display: block;
+
+    animation: reviewFade .7s ease;
+}
+
+@keyframes reviewFade {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================
+   QUOTE
+========================================= */
+
+.review-quote {
+    margin-bottom: 8px;
+
+    color: #ff2c20;
+
+    font-family: Georgia, serif;
+
+    font-size: 48px;
+
+    line-height: .7;
+}
+
+
+/* =========================================
+   TEXT
+========================================= */
+
+.review-text {
+    max-width: 720px;
+
+    margin: 0 auto 22px;
+
+    color: #e5e1da;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(18px, 2vw, 25px);
+
+    font-weight: 400;
+
+    line-height: 1.4;
+
+    letter-spacing: -.2px;
+}
+
+
+/* =========================================
+   AUTHOR
+========================================= */
+
+.review-author {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+}
+
+.review-author-line {
+    width: 22px;
+
+    height: 1px;
+
+    background: #ff2c20;
+}
+
+.review-author strong {
+    display: block;
+
+    color: #fff;
+
+    font-size: 8px;
+
+    letter-spacing: 1.6px;
+}
+
+.review-author span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #777;
+
+    font-size: 7px;
+
+    letter-spacing: 1.2px;
+}
+
+
+/* =========================================
+   CONTROLS
+========================================= */
+
+.reviews-controls {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 14px;
+
+    margin-top: 30px;
+}
+
+.reviews-controls button {
+    width: 32px;
+
+    height: 32px;
+
+    border: 1px solid #444;
+
+    background: transparent;
+
+    color: #fff;
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+    transition: .3s ease;
+}
+
+.reviews-controls button:hover {
+    background: #ff2c20;
+
+    border-color: #ff2c20;
+}
+
+.review-progress {
+    width: 110px;
+
+    height: 1px;
+
+    background: #444;
+}
+
+.review-progress span {
+    display: block;
+
+    width: 25%;
+
+    height: 1px;
+
+    background: #ff2c20;
+
+    transition: width .4s ease;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .kyoto-reviews {
+        padding: 55px 0;
+    }
+
+    .reviews-slider {
+        min-height: 220px;
+    }
+
+    .review-text {
+        font-size: 21px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .kyoto-reviews {
+        padding: 45px 0;
+    }
+
+    .kyoto-reviews-inner {
+        width: calc(100% - 30px);
+    }
+
+    .kyoto-reviews-top {
+        margin-bottom: 25px;
+    }
+
+    .reviews-slider {
+        min-height: 240px;
+    }
+
+    .review-quote {
+        font-size: 40px;
+    }
+
+    .review-text {
+        font-size: 18px;
+
+        line-height: 1.45;
+
+        padding: 0 10px;
+    }
+
+    .reviews-controls {
+        margin-top: 25px;
+    }
+
+}
+
+
+
+
+
+
+/* =========================================
+   PREMIUM MACHIYA FOOTER
+   COMPACT VERSION
+========================================= */
+
+.machiya-footer {
+    position: relative;
+
+    background: #111111;
+
+    color: #fff;
+
+    overflow: hidden;
+
+    padding: 60px 0 0;
+}
+
+
+/* =========================================
+   LARGE KYOTO BACKGROUND
+========================================= */
+
+.footer-kyoto-text {
+    position: absolute;
+
+    left: 50%;
+
+    bottom: -30px;
+
+    transform: translateX(-50%);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: clamp(100px, 17vw, 250px);
+
+    font-weight: 400;
+
+    line-height: .7;
+
+    letter-spacing: -7px;
+
+    color: rgba(255,255,255,.025);
+
+    white-space: nowrap;
+
+    pointer-events: none;
+
+    user-select: none;
+}
+
+
+/* =========================================
+   INNER
+========================================= */
+
+.machiya-footer-inner {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(
+        1150px,
+        calc(100% - 50px)
+    );
+
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   TOP FOOTER
+========================================= */
+
+.machiya-footer-top {
+    display: grid;
+
+    grid-template-columns:
+        2fr
+        1fr
+        1fr
+        1.2fr;
+
+    gap: 40px;
+
+    padding-bottom: 50px;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.12);
+}
+
+
+/* =========================================
+   BRAND
+========================================= */
+
+.footer-brand {
+    max-width: 300px;
+}
+
+.footer-logo {
+    display: inline-block;
+
+    margin-bottom: 15px;
+}
+
+.footer-logo img {
+    display: block;
+
+    width: 105px;
+
+    height: auto;
+}
+
+.footer-brand p {
+    margin: 0 0 18px;
+
+    color: #88847d;
+
+    font-size: 12px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================
+   FOOTER CTA
+========================================= */
+
+.footer-explore {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #fff;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-decoration: none;
+}
+
+.footer-explore span {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 26px;
+
+    height: 26px;
+
+    border:
+        1px solid #444;
+
+    color: #ff2c20;
+
+    transition: .3s ease;
+}
+
+.footer-explore:hover span {
+    background: #ff2c20;
+
+    border-color: #ff2c20;
+
+    color: #fff;
+}
+
+
+/* =========================================
+   COLUMN TITLE
+========================================= */
+
+.footer-column-title {
+    position: relative;
+
+    display: block;
+
+    margin-bottom: 16px;
+
+    color: #ff2c20;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.footer-column-title::before {
+    content: "";
+
+    display: inline-block;
+
+    width: 15px;
+
+    height: 1px;
+
+    margin-right: 7px;
+
+    vertical-align: middle;
+
+    background: #ff2c20;
+}
+
+
+/* =========================================
+   FOOTER LINKS
+========================================= */
+
+.footer-column ul {
+    list-style: none;
+
+    margin: 0;
+
+    padding: 0;
+}
+
+.footer-column li {
+    margin-bottom: 8px;
+}
+
+.footer-column a {
+    position: relative;
+
+    color: #aaa59d;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 13px;
+
+    text-decoration: none;
+
+    transition:
+        color .3s ease,
+        padding-left .3s ease;
+}
+
+.footer-column a:hover {
+    color: #fff;
+
+    padding-left: 5px;
+}
+
+.footer-column a::before {
+    content: "";
+
+    position: absolute;
+
+    left: -6px;
+
+    top: 50%;
+
+    width: 3px;
+
+    height: 3px;
+
+    border-radius: 50%;
+
+    background: #ff2c20;
+
+    opacity: 0;
+
+    transform: translateY(-50%);
+
+    transition: opacity .3s ease;
+}
+
+.footer-column a:hover::before {
+    opacity: 1;
+}
+
+
+/* =========================================
+   CONTACT
+========================================= */
+
+.footer-contact p {
+    margin: 0 0 7px;
+
+    color: #88847d;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+.footer-contact > a {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #d0cbc3;
+
+    font-size: 12px;
+
+    text-decoration: none;
+
+    transition: color .3s ease;
+}
+
+.footer-contact > a:hover {
+    color: #ff2c20;
+}
+
+
+/* =========================================
+   SOCIAL
+========================================= */
+
+.footer-socials {
+    display: flex;
+
+    gap: 6px;
+
+    margin-top: 15px;
+}
+
+.footer-socials a {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 35px;
+
+    height: 35px;
+
+    border:
+        1px solid #3b3b3b;
+
+    color: #aaa;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-decoration: none;
+
+    transition: .3s ease;
+}
+
+.footer-socials a:hover {
+    background: #ff2c20;
+
+    border-color: #ff2c20;
+
+    color: #fff;
+}
+
+
+/* =========================================
+   NEWSLETTER
+========================================= */
+
+.footer-newsletter {
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 40px;
+
+    padding: 35px 0;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.12);
+}
+
+.newsletter-heading > span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #77736c;
+
+    font-size: 7px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+}
+
+.newsletter-heading h3 {
+    margin: 0;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: clamp(25px, 3vw, 38px);
+
+    font-weight: 400;
+
+    line-height: 1;
+}
+
+.newsletter-heading h3 em {
+    color: #ff2c20;
+
+    font-style: italic;
+}
+
+
+/* =========================================
+   NEWSLETTER FORM
+========================================= */
+
+.newsletter-form {
+    display: flex;
+
+    width: 380px;
+
+    border-bottom:
+        1px solid #555;
+}
+
+.newsletter-form input {
+    flex: 1;
+
+    height: 38px;
+
+    padding: 0 4px;
+
+    background: transparent;
+
+    border: 0;
+
+    outline: none;
+
+    color: #fff;
+
+    font-family: inherit;
+
+    font-size: 10px;
+}
+
+.newsletter-form input::placeholder {
+    color: #666;
+}
+
+.newsletter-form button {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 0;
+
+    background: transparent;
+
+    border: 0;
+
+    color: #fff;
+
+    cursor: pointer;
+
+    font-size: 7px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+.newsletter-form button span {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 25px;
+
+    height: 25px;
+
+    background: #ff2c20;
+
+    color: #fff;
+
+    transition: .3s ease;
+}
+
+.newsletter-form button:hover span {
+    transform: translate(2px,-2px);
+}
+
+
+/* =========================================
+   BOTTOM
+========================================= */
+
+.machiya-footer-bottom {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    min-height: 55px;
+}
+
+.machiya-footer-bottom p {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+    letter-spacing: .4px;
+}
+
+
+/* =========================================
+   BOTTOM LINKS
+========================================= */
+
+.footer-bottom-links {
+    display: flex;
+
+    gap: 18px;
+}
+
+.footer-bottom-links a {
+    color: #ffffff;
+
+    font-size: 12px;
+
+    text-decoration: none;
+
+    transition: color .3s ease;
+}
+
+.footer-bottom-links a:hover {
+    color: #ff2c20;
+}
+
+
+/* =========================================
+   BACK TO TOP
+========================================= */
+
+.back-to-top {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+
+    text-decoration: none;
+}
+
+.back-to-top span {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 30px;
+
+    height: 30px;
+
+    border:
+        1px solid #444;
+
+    color: #ff2c20;
+
+    transition: .3s ease;
+}
+
+.back-to-top:hover span {
+    background: #ff2c20;
+
+    border-color: #ff2c20;
+
+    color: #fff;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .machiya-footer {
+        padding-top: 55px;
+    }
+
+    .machiya-footer-inner {
+        width: calc(100% - 40px);
+    }
+
+    .machiya-footer-top {
+        grid-template-columns:
+            1.5fr
+            1fr
+            1fr;
+
+        gap: 30px;
+    }
+
+    .footer-contact {
+        grid-column: span 3;
+    }
+
+    .footer-newsletter {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+    .newsletter-form {
+        width: 100%;
+
+        max-width: 420px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    .machiya-footer {
+        padding-top: 50px;
+    }
+
+    .machiya-footer-inner {
+        width: calc(100% - 30px);
+    }
+
+    .machiya-footer-top {
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+
+        padding-bottom: 40px;
+    }
+
+    .footer-brand {
+        max-width: 100%;
+    }
+
+    .footer-contact {
+        grid-column: auto;
+    }
+
+    .footer-newsletter {
+        padding: 30px 0;
+
+        gap: 20px;
+    }
+
+    .newsletter-form {
+        width: 100%;
+
+        display: flex;
+    }
+
+    .machiya-footer-bottom {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        justify-content: center;
+
+        gap: 12px;
+
+        padding: 20px 0;
+    }
+
+    .footer-bottom-links {
+        flex-wrap: wrap;
+
+        gap: 10px 15px;
+    }
+
+    .back-to-top {
+        margin-top: 3px;
+    }
+
+    .footer-kyoto-text {
+        font-size: 90px;
+
+        bottom: 0;
+
+        letter-spacing: -4px;
+    }
+}
+
+
